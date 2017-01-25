@@ -1,0 +1,84 @@
+{
+  "name": "rapid",
+  "version": "1.0.0",
+  "description": "A simple tool for rapidly creating components",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
+  "license": "CC0-1.0",
+  "repository": "jonathantneal/rapid",
+  "homepage": "https://github.com/jonathantneal/rapid",
+  "bugs": "https://github.com/jonathantneal/rapid/issues",
+  "main": "index.js",
+  "files": [
+    "*.js",
+    "lib",
+    "prototype"
+  ],
+  "bin": {
+    "rapid": "cli.js"
+  },
+  "scripts": {
+    "lint": "npm run lint:ec && npm run lint:js",
+    "lint:ec": "echint",
+    "lint:js": "eslint *.js lib/*.js lib/**/*.js --cache --ignore-pattern .gitignore",
+    "pre-commit": "echo 'Running pre-commit checks...' && exit 0",
+    "prepublish": "npm test",
+    "tape": "node cli dist test",
+    "test": "npm run lint && npm run tape"
+  },
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "dependencies": {
+    "eslit": "^3.0.0",
+    "mime-types": "^2.1.13",
+    "minimatch": "^3.0.3",
+    "postcss": "^5.2.10",
+    "resolve": "^1.2.0",
+    "rollup": "^0.41.3"
+  },
+  "devDependencies": {
+    "echint": "^2.1.1",
+    "echint-config-dev": "^1.0.0",
+    "eslint": "^3.13.1",
+    "eslint-config-dev": "^1.0.0",
+    "pre-commit": "^1.2.2"
+  },
+  "echint": {
+    "extends": "dev"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "rules": {
+      "no-nested-ternary": [
+        0
+      ],
+      "wrap-regex": [
+        0
+      ]
+    }
+  },
+  "pre-commit": [
+    "pre-commit",
+    "lint"
+  ],
+  "keywords": [
+    "dev",
+    "development",
+    "eslit",
+    "node",
+    "npm",
+    "parsing",
+    "plugins",
+    "postcss",
+    "resolves",
+    "resolving",
+    "rollup",
+    "sugars",
+    "tagged",
+    "templates",
+    "templatings",
+    "watch",
+    "web",
+    "webdev"
+  ]
+}
