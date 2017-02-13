@@ -1,6 +1,6 @@
 {
   "name": "rapid",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A simple tool for rapidly creating components",
   "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
   "license": "CC0-1.0",
@@ -17,6 +17,7 @@
     "rapid": "cli.js"
   },
   "scripts": {
+    "clean": "git clean -X -d -f",
     "lint": "npm run lint:ec && npm run lint:js",
     "lint:ec": "echint",
     "lint:js": "eslint *.js lib/*.js lib/**/*.js --cache --ignore-pattern .gitignore",
@@ -30,32 +31,24 @@
   },
   "dependencies": {
     "eslit": "^3.0.0",
-    "mime-types": "^2.1.13",
+    "mime-types": "^2.1.14",
     "minimatch": "^3.0.3",
-    "postcss": "^5.2.10",
+    "postcss": "^5.2.12",
     "resolve": "^1.2.0",
-    "rollup": "^0.41.3"
+    "rollup": "^0.41.4"
   },
   "devDependencies": {
-    "echint": "^2.1.1",
+    "echint": "^4.0.1",
     "echint-config-dev": "^1.0.0",
-    "eslint": "^3.13.1",
-    "eslint-config-dev": "^1.0.0",
+    "eslint": "^3.15.0",
+    "eslint-config-dev": "^2.0.0",
     "pre-commit": "^1.2.2"
   },
   "echint": {
     "extends": "dev"
   },
   "eslintConfig": {
-    "extends": "dev",
-    "rules": {
-      "no-nested-ternary": [
-        0
-      ],
-      "wrap-regex": [
-        0
-      ]
-    }
+    "extends": "dev"
   },
   "pre-commit": [
     "pre-commit",

@@ -15,7 +15,7 @@ module.exports = (config = require('./lib/config')) => Promise.resolve(
 		(resolve, opt) => resolve.then(
 			// report initialization and create files and directory
 			() => log.wait(`${ opt } ${ fs.basename(config[opt].from || `index.${ opt.replace('jsx', 'html') }`) } ${ msgCreating }`) && (
-				opt === 'assets' ? fs.mkdir(config[opt].from) : fs.touchFile(
+				opt === 'placeholders' ? fs.mkdir(config[opt].from) : fs.touchFile(
 					config[opt].from
 				)
 			)
